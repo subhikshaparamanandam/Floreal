@@ -18,6 +18,10 @@
       --radius: 1rem;
     }
 
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -1264,11 +1268,11 @@
       // Sticky Nav Background / Padding transition
       if (scrollY > 80) {
         nav.style.background = 'rgba(10, 10, 10, 0.9)';
-        nav.style.padding = '0.4rem 2.5rem';
+        nav.style.padding = '0.4rem 2rem';
         nav.style.borderBottom = '1px solid rgba(255,255,255,0.15)';
       } else {
         nav.style.background = 'rgba(10, 10, 10, 0.6)';
-        nav.style.padding = '0.65rem 2.5rem';
+        nav.style.padding = '0.65rem 2rem';
         nav.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
       }
 
