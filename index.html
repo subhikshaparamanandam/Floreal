@@ -93,10 +93,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-      backdrop-filter: blur(20px);
-      background: rgba(10, 10, 10, 0.6);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 9999;
+      backdrop-filter: blur(25px);
+      background: rgba(10, 10, 10, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -955,9 +955,17 @@
 
     .parallax-header.is-visible,
     .card.is-visible,
-    .gallery-item.is-visible {
+    .gallery-item.is-visible,
+    .reveal-item.is-visible {
       transform: translateY(0);
       opacity: 1;
+    }
+
+    .reveal-item {
+      will-change: transform, opacity;
+      transform: translateY(30px);
+      opacity: 0;
+      transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease;
     }
 
     @media (max-width:640px) {
@@ -1120,15 +1128,15 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero">
+  <section id="hero" style="padding-top: 80px;">
     <video autoplay loop muted playsinline
       src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4"></video>
     <div class="overlay"></div>
     <div class="content">
       <div class="hero-left">
         <div class="glass liquid-glass-strong"></div>
-        <div class="inner">
-          <div class="hero-center" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div class="inner" style="justify-content: center;">
+          <div class="hero-center" style="margin: auto 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
             <h1>Innovating the <span class="italic">spirit of bloom AI</span></h1>
             <a href="#features" class="cta-btn">
@@ -1477,19 +1485,19 @@
 
   <!-- Footer -->
   <footer id="footer">
-    <div class="newsletter-row liquid-glass">
+    <div class="newsletter-row liquid-glass-strong reveal-item" style="position: relative; z-index: 10;">
       <div class="newsletter-text">
         <h3>Stay in the loop</h3>
         <p>Get the latest botanical trends and AI breakthroughs delivered to your inbox.</p>
       </div>
-      <form class="newsletter-form" onsubmit="return false;">
-        <input type="email" placeholder="Enter your email" required />
+      <form class="newsletter-form" onsubmit="return false;" style="position: relative; z-index: 11;">
+        <input type="email" placeholder="Enter your email" required style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff;" />
         <button type="submit">Join Now</button>
       </form>
     </div>
 
     <div class="grid">
-      <div class="col">
+      <div class="col reveal-item">
         <div class="logo" style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #fff;">
           <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="width: 28px; height: 28px; fill: #fff;">
             <circle cx="32" cy="32" r="32" />
@@ -1498,28 +1506,28 @@
         </div>
         <p style="line-height: 1.6; max-width: 240px;">Premium AI‑driven platform for floral design. Where technology meets botanical artistry.</p>
       </div>
-      <div class="col">
+      <div class="col reveal-item">
         <h4>Product</h4>
         <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
         <a href="#pricing">Pricing</a>
         <a href="#changelog">Changelog</a>
       </div>
-      <div class="col">
+      <div class="col reveal-item">
         <h4>Resources</h4>
         <a href="#community">Community</a>
         <a href="#blog">Blog</a>
         <a href="#help">Help Center</a>
         <a href="#status">System Status</a>
       </div>
-      <div class="col">
+      <div class="col reveal-item">
         <h4>Company</h4>
         <a href="#about">About</a>
         <a href="#careers">Careers</a>
         <a href="#press">Press Kit</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="col">
+      <div class="col reveal-item">
         <h4>Legal</h4>
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Service</a>
@@ -1527,7 +1535,7 @@
       </div>
     </div>
 
-    <div class="bottom">
+    <div class="bottom reveal-item">
       <div>© 2026 Floréal Studio Inc. All rights reserved.</div>
       <div class="social">
         <a href="#" aria-label="Instagram">
@@ -1622,10 +1630,10 @@
       });
     }, revealOptions);
 
-    // Apply reveal to Headers and Cards
-    const revealTargets = document.querySelectorAll('.parallax-header, .card, .gallery-item');
+    // Apply reveal to Headers, Cards, and Footer Items
+    const revealTargets = document.querySelectorAll('.parallax-header, .card, .gallery-item, .reveal-item');
     revealTargets.forEach((target, index) => {
-      target.style.transitionDelay = `${(index % 4) * 0.1}s`; // Stagger effect
+      target.style.transitionDelay = `${(index % 5) * 0.15}s`; // Slightly slower stagger for footer
       revealObserver.observe(target);
     });
   </script>
