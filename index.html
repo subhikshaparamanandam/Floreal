@@ -869,6 +869,139 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ==== Pricing Section ==== */
+    #pricing {
+      padding: 6rem 2.5rem;
+      background: linear-gradient(180deg, #0f0f0f, #0a0a0a);
+      text-align: center;
+    }
+
+    #pricing .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    #pricing h2 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 2.2rem;
+      margin: 0 0 3.5rem;
+    }
+
+    #pricing .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #pricing .card {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+
+    #pricing .card.popular {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #pricing .card .badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    #pricing .card .icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #pricing .card .icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    #pricing .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #pricing .card .price {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    #pricing .card .price span {
+      font-size: 1rem;
+      opacity: 0.5;
+      font-weight: 400;
+    }
+
+    #pricing .features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      flex: 1;
+    }
+
+    #pricing .features li {
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #pricing .features li::before {
+      content: "•";
+      color: #fff;
+    }
+
+    #pricing .card .btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    #pricing .card .btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    #pricing .popular .btn {
+      background: #fff;
+      color: #0a0a0a;
+    }
+
+    #pricing .popular .btn:hover {
+      background: #eee;
+    }
   </style>
 </head>
 
@@ -1087,6 +1220,73 @@
         <img src="https://picsum.photos/seed/g6/800/500" alt="Event Design" class="gallery-img" />
         <div class="overlay"></div>
         <div class="title">Event Design – Grande Pavilion</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div class="section-label">SELECT YOUR PLAN</div>
+    <h2 class="parallax-header">Bloom Further with Floréal</h2>
+    <div class="grid">
+      <!-- Starter -->
+      <div class="card liquid-glass">
+        <div class="header-pricing">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22v-7M7 10a5 5 0 0110 0c0 3-5 9-5 9s-5-6-5-9z" fill="none" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+          <h3>Seedling</h3>
+          <p class="price">$0 <span>/mo</span></p>
+        </div>
+        <ul class="features">
+          <li>Basic 3D modeling</li>
+          <li>Community access</li>
+          <li>Public gallery</li>
+          <li>Standard rendering</li>
+        </ul>
+        <a href="#cta" class="btn">Get Started</a>
+      </div>
+      <!-- Professional -->
+      <div class="card liquid-glass-strong popular">
+        <div class="badge">Most Popular</div>
+        <div class="header-pricing">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2" />
+              <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" fill="white" />
+            </svg>
+          </div>
+          <h3>Blossom</h3>
+          <p class="price">$29 <span>/mo</span></p>
+        </div>
+        <ul class="features">
+          <li>AI Floral Generation</li>
+          <li>3D Structure Builder</li>
+          <li>Growth Analytics</li>
+          <li>Private Workspace</li>
+        </ul>
+        <a href="#cta" class="btn">Upgrade Now</a>
+      </div>
+      <!-- Studio -->
+      <div class="card liquid-glass">
+        <div class="header-pricing">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 21h18M5 21V11l7-7 7 7v10M9 21V14h6v7" fill="none" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+          <h3>Greenhouse</h3>
+          <p class="price">$99 <span>/mo</span></p>
+        </div>
+        <ul class="features">
+          <li>Team Collaboration</li>
+          <li>Advanced API access</li>
+          <li>Seasonal Intelligence</li>
+          <li>Custom Plant Sculpting</li>
+        </ul>
+        <a href="#cta" class="btn">Contact Us</a>
       </div>
     </div>
   </section>
