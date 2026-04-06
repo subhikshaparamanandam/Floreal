@@ -1,0 +1,12 @@
+{
+  "name": "floreal",
+  "version": "1.0.0",
+  "description": "Premium single‑page website for Floréal AI‑powered plant design.",
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
