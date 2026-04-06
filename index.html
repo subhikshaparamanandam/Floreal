@@ -796,56 +796,149 @@
     #footer {
       background: #060606;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 4rem 2.5rem 2.5rem;
+      padding: 6rem 2.5rem 3rem;
       color: rgba(255, 255, 255, 0.4);
+    }
+
+    #footer .newsletter-row {
+      max-width: 1100px;
+      margin: 0 auto 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      padding: 3rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    #footer .newsletter-text h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    #footer .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      min-width: 400px;
+    }
+
+    #footer .newsletter-form input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #footer .newsletter-form input:focus {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    #footer .newsletter-form button {
+      background: #fff;
+      color: #060606;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    #footer .newsletter-form button:hover {
+      background: #ddd;
+      transform: translateY(-2px);
     }
 
     #footer .grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2rem;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
     }
 
     #footer .col h4 {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: #fff;
     }
 
     #footer .col a {
       display: block;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.75rem;
       font-size: 0.9rem;
       color: inherit;
-      opacity: 0.8;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    #footer .col a:hover {
+      color: #fff;
+      transform: translateX(4px);
     }
 
     #footer .bottom {
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 1rem;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.3);
+      padding-top: 2rem;
+      font-size: 0.8rem;
+    }
+
+    #footer .social {
+      display: flex;
+      gap: 1.5rem;
     }
 
     #footer .social a {
-      width: 32px;
-      height: 32px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 50%;
-      margin-left: 0.5rem;
-      transition: background 0.2s;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.3s, transform 0.3s;
     }
 
     #footer .social a:hover {
-      background: rgba(255, 255, 255, 0.12);
       color: #fff;
+      transform: scale(1.2);
+    }
+
+    #footer .social svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      #footer .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+      #footer .newsletter-row {
+        flex-direction: column;
+        text-align: center;
+      }
+      #footer .newsletter-form {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #footer .grid {
+        grid-template-columns: 1fr;
+      }
+      #footer .bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
     }
 
     .parallax-header,
@@ -1396,10 +1489,26 @@
 
   <!-- Footer -->
   <footer id="footer">
+    <div class="newsletter-row liquid-glass">
+      <div class="newsletter-text">
+        <h3>Stay in the loop</h3>
+        <p>Get the latest botanical trends and AI breakthroughs delivered to your inbox.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Join Now</button>
+      </form>
+    </div>
+
     <div class="grid">
       <div class="col">
-        <h4>floréal</h4>
-        <p>AI‑driven plant design platform. Transform ideas into reality.</p>
+        <div class="logo" style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #fff;">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="width: 28px; height: 28px; fill: #fff;">
+            <circle cx="32" cy="32" r="32" />
+          </svg>
+          <span>floréal</span>
+        </div>
+        <p style="line-height: 1.6; max-width: 240px;">Premium AI‑driven platform for floral design. Where technology meets botanical artistry.</p>
       </div>
       <div class="col">
         <h4>Product</h4>
@@ -1409,32 +1518,48 @@
         <a href="#changelog">Changelog</a>
       </div>
       <div class="col">
-        <h4>Company</h4>
-        <a href="#about">About</a>
+        <h4>Resources</h4>
         <a href="#community">Community</a>
         <a href="#blog">Blog</a>
+        <a href="#help">Help Center</a>
+        <a href="#status">System Status</a>
+      </div>
+      <div class="col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
         <a href="#careers">Careers</a>
+        <a href="#press">Press Kit</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="col">
         <h4>Legal</h4>
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Service</a>
-        <a href="#cookies">Cookie Settings</a>
-        <a href="#contact">Contact</a>
+        <a href="#cookies">Cookie Policy</a>
       </div>
     </div>
+
     <div class="bottom">
-      <div>© 2026 Floréal. All rights reserved.</div>
+      <div>© 2026 Floréal Studio Inc. All rights reserved.</div>
       <div class="social">
-        <a href="#"><svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" fill="white" />
-          </svg></a>
-        <a href="#"><svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" fill="white" />
-          </svg></a>
-        <a href="#"><svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" fill="white" />
-          </svg></a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="#" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M20 4l-6.768 6.768"></path>
+          </svg>
+        </a>
+        <a href="#" aria-label="Dribbble">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8.5 2.5c3.5 20 13 10 13 10M2 11c20 0 10 10.5 10 10.5M5 6c3.5 1 8 9 8 9"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
