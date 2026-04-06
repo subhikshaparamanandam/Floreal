@@ -93,7 +93,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
+      z-index: 1000;
       backdrop-filter: blur(20px);
       background: rgba(10, 10, 10, 0.6);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1125,22 +1125,7 @@
       <div class="hero-left">
         <div class="glass liquid-glass-strong"></div>
         <div class="inner">
-          <div class="nav-row" style="width:100%; display:flex; justify-content:space-between; padding:1.25rem 1.5rem;">
-            <div class="logo" style="display:flex; align-items:center; gap:0.5rem; font-weight:600; font-size:2xl;">
-              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="32" fill="white" />
-              </svg>
-              <span>floréal</span>
-            </div>
-            <button class="pill liquid-glass"
-              style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.8rem; border-radius:999px;">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6h16M4 12h16M4 18h16" stroke="white" stroke-width="2" stroke-linecap="round" />
-              </svg>
-              <span>Menu</span>
-            </button>
-          </div>
-          <div class="hero-center">
+          <div class="hero-center" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
             <h1>Innovating the <span class="italic">spirit of bloom AI</span></h1>
             <a href="#features" class="cta-btn">
